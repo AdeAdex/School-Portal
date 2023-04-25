@@ -21,18 +21,20 @@
           <td>Phone Number</td>
           <td>Email Address</td>
           <td>Gender</td>
+          <td>State</td>
         </tr>
       </thead>
       <% response.map((eachUser, index) => { %>
         <tbody>
         <tr>
           <td><%= index + 1 %></td>
-          <td><%= response[index]._id%></td>
+          <td><%= response[index].identity%></td>
           <td><%= response[index].firstName %> <%= response[index].lastName %></td>
           <td><%= response[index].age %></td>
           <td><%= response[index].phoneNumber %></td>
           <td><%= response[index].email %></td>
           <td><%= response[index].gender %></td>
+          <td><%= response[index].state %></td>
         </tr>
       </tbody>
      <% }) %>

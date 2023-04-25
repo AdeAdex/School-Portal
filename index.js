@@ -3,11 +3,13 @@ const app = express();
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const URI = 'mongodb+srv://adeoluamole:Adex_3395@cluster0.m9yadoa.mongodb.net/portal_db?retryWrites=true&w=majority'
+require('dotenv').config()
+const PORT = process.env.PORT || 7500
+const mongoose_URI = process.env.URI
 
 
 mongoose
-  .connect(URI)
+  .connect(mongoose_URI)
   .then(() => {
     console.log("Mongoose Connected Successfully");
   })
@@ -18,7 +20,7 @@ mongoose
   let schoolPortalSchema = {
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
-    // id: {type: Number, Math.floor(Math.random() *1000},
+    identity: {type: String, required: true},
     email: {type: String, required: true, unique: true},
     phoneNumber: {type: Number, required: true},
     city: {type: String, required: true},
@@ -97,6 +99,6 @@ app.post("/signin", (req, res) => {
 })
 
 
-app.listen("7000", () => {
-  console.log("Listening on port 7000");
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });

@@ -17,7 +17,7 @@
     <style>
       .inputbox {
         position: relative;
-        width: 196px;
+        margin-top: 10px;
       }
 
       .inputbox input {
@@ -28,7 +28,7 @@
         outline: none;
         box-shadow: none;
         border: none;
-        color: #23242a;
+        color: white;
         font-size: 1em;
         letter-spacing: 0.05em;
         transition: 0.5s;
@@ -40,7 +40,7 @@
         left: 0;
         padding: 20px 10px 10px;
         font-size: 1em;
-        color: #8f8f8f;
+        color: whitesmoke;
         letter-spacing: 00.05em;
         transition: 0.5s;
         pointer-events: none;
@@ -48,7 +48,7 @@
 
       .inputbox input:valid ~ span,
       .inputbox input:focus ~ span {
-        color: #45f3ff;
+        color: white;
         transform: translateX(-10px) translateY(-34px);
         font-size: 0, 75em;
       }
@@ -59,7 +59,7 @@
         bottom: 0;
         width: 100%;
         height: 2px;
-        background: #45f3ff;
+        background: rgb(15, 12, 33);
         border-radius: 4px;
         transition: 0.5s;
         pointer-events: none;
@@ -71,59 +71,54 @@
         height: 44px;
       }
 
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
+      *:focus {
+        outline: none;
+      }
 
-      *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+      body {
+        width: 100%;
+        height: 100vh;
+        background-color: #3C37FF;
+      }
 
-  *:focus {
-    outline: none;
-  }
+      .main-container {
+        background-image: radial-gradient(
+            circle at 20% -25%,
+            darkorange 35%,
+            rgb(15, 12, 33) 35%
+          ),
+          url("pic/3.png");
+        background-color: rgb(10, 9, 22);
+        transition: background-color 1ms;
+        background-position: 68% 40%;
+        background-repeat: no-repeat;
+        background-blend-mode: exclusion;
+        width: 100%;
+        height: 100%;
+        border: 8px solid darkcyan;
+        border-radius: 40px;
+        padding: 0px 30px 15px 30px;
+        overflow: hidden;
+      }
 
-  body {
-    width: 100%;
-    height: 100%;
-    background-color: darkcyan;
-  }
-
-  .main-container {
-    /* background: 
-        linear-gradient(to top, transparent, rgb(27, 25, 39) 100%),
-        gray repeating-linear-gradient(45deg, transparent, transparent 35px,
-        rgba(255, 255, 255, 0.5) 35px, rgb(14, 10, 34)
-        rgba(255, 255, 255, 0.5) 70px); */
-    /* background-color: rgb(15, 12, 33); */
-    background-image: radial-gradient(circle at 20% -25%, darkorange 35%,  rgb(15, 12, 33) 35%),  url("pic/3.png");
-    background-color: rgb(10, 9, 22);
-    transition: background-color 1ms;
-    background-position: 68% 40%;
-    background-repeat: no-repeat;
-    background-blend-mode: exclusion;
-    width: 100%;
-    height: 100%;
-    border: 8px solid darkcyan;
-    border-radius: 40px;
-    padding: 0px 30px 15px 30px;
-    overflow: hidden;
-  }
-
-  .main-container:hover {
+      /* .main-container:hover {
     background-blend-mode: screen;
     background-position: 50% -20%;
-  }
+  } */
 
-  .container {
-    position: relative;
-    height: 100%;
-    height: 100%;
-  }
+      .container {
+        position: relative;
+        height: 100%;
+        height: 100%;
+      }
 
-  
-
-  /* #imgContainer {
+      /* #imgContainer {
     width: 100px;
     height: 100px;
     background-color: gray;
@@ -138,287 +133,236 @@
     object-fit: cover;
   } */
 
-  .file-btn {
-    /* width: 100%;
-    height: 120px;
-    display: flex;
-    justify-content: end; */
-    width: 100px;
-    height: 100px;
-    background-color: gray;
-    border: 5px solid white;
-    border-radius: 50%;
-    position: relative;
-    z-index: 2;
-    cursor: pointer;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 60%;
-    object-fit: cover;
-  }
-
-  .file2 {
-    height: 100%;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #photo {
-    cursor: pointer;
-    margin-top: 5px;
-  }
-
-  #myFrame {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    object-fit: cover;
-    object-position: center;
-  }
-
-
-
-  #h1 {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    font-weight: bold;
-    font-size: 35px;
-    text-transform: capitalize;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-
-
-  @media screen and (min-width:600px) and (max-width: 991px) {
-    body {
-        display: flex;
-    }
-    .main-container {
-        width: 100%; 
-        margin: auto;
-        background-image: radial-gradient(circle at 30% -25%, darkorange 40%,  rgb(15, 12, 33) 30%),  url("pic/img.png");
-    }
-    #imgContainer {
-        margin-top: 80px;
+      .file-btn {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        border: 5px solid white;
+        border-radius: 50%;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        margin-top: 40px;
         margin-bottom: 40px;
-        margin-left: 65%;
+        margin-left: 60%;
+        object-fit: cover;
       }
-  }
 
-  @media screen and (min-width:991px) {
-    body {
+      .file2 {
+        height: 100%;
+        width: auto;
         display: flex;
-    }
-    .main-container {
-        width: 50%;
-        background-position: 68% 60%;
-        margin: auto;
-        background-image: radial-gradient(circle at 30% -35%, darkorange 45%,  rgb(15, 12, 33) 30%),  url("pic/img.png");
-    }
-    #imgContainer {
-        margin-top: 100px;
-        margin-bottom: 80px;
-        margin-left: 65%;
+        flex-direction: column;
       }
-  }
 
-  .login-input {
-    display: flex;
-    flex-direction: column;
-    color: darkorange;
-    border: 3px solid #3498db;
-    transition: .5s;
-    border-radius: 24px;
-    width: 100%;
-    margin: 30px auto;
-    padding: 0px 30px;
-    font-size: 15px;
-    background-color: inherit;
-    line-height: 40px;
-    box-shadow: inset 0px 0px 2px gray;
-    background-image: url("pic/user-icon.png");
-	  background-size: 28px;
-    background-repeat: no-repeat;
-    background-position: 95%;
-  }
+      #photo {
+        cursor: pointer;
+        margin-top: 5px;
+      }
 
-  #pass {
-    background-image: url("pic/lock-icon.png");
-  }
+      #myFrame {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        object-fit: cover;
+        object-position: center;
+      }
 
- .login-input:focus {
-    width: 85%;
-    border-color: #2ecc71;
-  }
+      #h1 {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-weight: bold;
+        font-size: 35px;
+        text-transform: capitalize;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
 
-  .check {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    color: white;
-  }
+      @media screen and (min-width: 600px) and (max-width: 991px) {
+        body {
+          display: flex;
+        }
+        .main-container {
+          width: 100%;
+          margin: auto;
+          background-image: radial-gradient(
+              circle at 30% -25%,
+              darkorange 40%,
+              rgb(15, 12, 33) 30%
+            ),
+            url("pic/img.png");
+        }
+        #imgContainer {
+          margin-top: 80px;
+          margin-bottom: 40px;
+          margin-left: 65%;
+        }
+      }
 
-  #checkBox {
-    margin: auto 5px auto 10px;
-    cursor: pointer;
-  }
+      @media screen and (min-width: 991px) {
+        body {
+          display: flex;
+        }
+        .main-container {
+          width: 30%;
+          background-position: 68% 60%;
+          margin: auto;
+          background-image: radial-gradient(
+              circle at 30% -35%,
+              darkorange 45%,
+              rgb(15, 12, 33) 30%
+            ),
+            url("pic/img.png");
+        }
+        #imgContainer {
+          margin-top: 100px;
+          margin-bottom: 80px;
+          margin-left: 65%;
+        }
 
-  #forgotPass {
-    color: white;
-    font-size: 14px;
-  }
+        .second-container {
+          display: flex !important; 
+        }
+      }
 
-  #loginBtn {
-    width: 100%;
-    line-height: 30px;
-    border-radius: 30px;
-    background-color: darkorange;
-    color: whitesmoke;
-    font-weight: bolder;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-  }
+      .check {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        color: white;
+      }
 
-  #h3 {
-    color: white;
-    text-align: center;
-    margin-top: 30px;
-  }
+      #checkBox {
+        margin: auto 5px auto 10px;
+        cursor: pointer;
+      }
 
-  #fingerprintBtn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: blue;
-    color: white;
-    font-size: 30px;
-    display: block;
-    /* margin: 20px auto 0px auto; */
-  }
+      #forgotPass {
+        color: white;
+        font-size: 14px;
+      }
 
-  #fingerprintBtnInModal {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: blue;
-    color: white;
-    font-size: 60px;
-    display: block;
-    margin: auto;
-    transition: all 1s;
-    transform: rotate(360deg);
-    /* border: 8px solid transparent;
-    border-image: url("border2.png") 100 stretch; */
-  }
+      #h3 {
+        color: white;
+        text-align: center;
+        margin-top: 30px;
+      }
 
-  .social-icons {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .fab {
-    display: flex;
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    padding: 0px 0px;
-    text-align: center;
-    border-radius: 50%;
-    margin-top: 20px;
-  }
+      .social-icons {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .fab {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        padding: 0px 0px;
+        text-align: center;
+        border-radius: 50%;
+        margin-top: 20px;
+      }
 
-  .fa-facebook {
-    color: #3b5998;
-    background-color: white;
-  }
+      .fa-facebook {
+        color: #3b5998;
+        background-color: white;
+      }
 
-  .fa-linkedin-in {
-    color: #0072b1;
-  }
+      .fa-linkedin-in {
+        color: #0072b1;
+      }
 
-  .fa-google {
-    color: #bd3518;
-  }
-  .fa-twitter {
-    color: #33ccff;
-  }
+      .fa-google {
+        color: #bd3518;
+      }
+      .fa-twitter {
+        color: #33ccff;
+      }
 
-  .sign-up-container {
-    width: 100%;
-    color: white;
-    text-align: center;
-    margin-top: 30px;
-  }
+      .sign-up-container {
+        width: 100%;
+        color: white;
+        text-align: center;
+        margin-top: 30px;
+      }
 
-  .sign-up-container a {
-    color: darkorange;
-    font-size: 20px;
-    font-family: cursive;
-    margin-left:  10px;
-  }
+      .sign-up-container a {
+        color: darkorange;
+        font-size: 20px;
+        font-family: cursive;
+        margin-left: 10px;
+      }
 
-  #signUpBtn {
-    width: 50%;
-    line-height: 30px;
-    border-radius: 30px;
-    background-color: darkorange;
-    color: whitesmoke;
-    font-weight: bolder;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-  }
+      #signUpBtn {
+        width: 50%;
+        line-height: 30px;
+        border-radius: 30px;
+        background-color: darkorange;
+        color: whitesmoke;
+        font-weight: bolder;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
-    <div class="main-container">
-      <div class="container">
-        <div class="file-btn" id="imgContainer">
-          <img src="pic/avatar.png" id="myFrame" />
+    <div class="d-flex w-100 p-3 gap-5">
+      <div class="main-container">
+        <div class="container">
+          <div class="file-btn" id="imgContainer">
+            <img src="pic/avatar.png" id="myFrame" />
+          </div>
+          <h1 id="h1">welcome <span>back!</span></h1>
+          <% if (message != "") { %>
+            <div class="alert alert-danger text-center"><%= message %></div>
+          <% } %>
+          <form action="/signin" method="post">
+            <div class="inputbox">
+              <input required="required" type="text" name="em" />
+              <span>Email</span>
+              <i></i>
+            </div>
+            <div class="inputbox mb-4">
+              <input required="required" type="text" name="pass" />
+              <span>Password</span>
+              <i></i>
+            </div>
+            <div class="check">
+              <span><input type="checkbox" id="checkBox" /> Remember Me</span>
+              <a href="" id="forgotPass">Forgot password</a>
+            </div>
+            <button class="btn btn-primary col-12" type="submit">Login</button>
+            <h3 id="h3">or log in with</h3>
+            <div class="social-icons">
+              <a href="www.facebook.com" class="icon-links"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="www.facebook.com" class="icon-links"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="www.google.com" class="icon-links"
+                ><i class="fab fa-google"></i
+              ></a>
+              <a href="www.twitter.com" class="icon-links"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+            <div class="sign-up-container">
+              <span>Not on Adex yet?</span> <a href="/signup">Sign Up</a>
+            </div>
+          </form>
         </div>
-        <h1 id="h1">welcome <span>back!</span></h1>
-        <div class="alert alert-danger text-center"><%= message %></div>
-        <form action="/signin" method="post">
-          <div class="inputbox">
-            <input required="required" type="text" name="em" />
-            <span>Email</span>
-            <i></i>
-          </div>
-          <div class="inputbox">
-            <input required="required" type="text" name="pass" />
-            <span>Password</span>
-            <i></i>
-          </div>
-          <div class="check">
-            <span><input type="checkbox" id="checkBox" /> Remember Me</span>
-            <a href="" id="forgotPass">Forgot password</a>
-          </div>
-          <button type="submit">Login</button>
-          <h3 id="h3">or log in with</h3>
-          <div class="social-icons">
-            <a href="www.facebook.com" class="icon-links"
-              ><i class="fab fa-facebook"></i
-            ></a>
-            <a href="www.facebook.com" class="icon-links"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a href="www.google.com" class="icon-links"
-              ><i class="fab fa-google"></i
-            ></a>
-            <a href="www.twitter.com" class="icon-links"
-              ><i class="fab fa-twitter"></i
-            ></a>
-          </div>
-          <div class="sign-up-container">
-            <span>Not on Adex yet?</span> <a href="/signup">Sign Up</a>
-          </div>
-        </form>
+      </div>
+      <div class="d-none second-container" style="width: 70%; height: 100%">
+        <div class="w-75 h-75 m-auto text-white p-5" style="background-color: #302bc8;">
+          digital platform for distance learning
+        </div>
       </div>
     </div>
 
