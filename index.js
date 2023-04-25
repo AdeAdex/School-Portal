@@ -32,6 +32,11 @@ mongoose
 
   let schoolPortalModel = mongoose.model('portal_collection', schoolPortalSchema)
 
+  const accountRouter = require('./routes/account.route')
+  const dashboardRouter = require('./routes/dashboard.route')
+  app.use('/account', accountRouter)
+  app.use('/dashboard', dashboardRouter)
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -42,17 +47,6 @@ app.get("/", (req, res) => {
         res.sendFile(__dirname + "/index.html");
 })
 
-app.get("/landingPage", (req, res) => {
-        res.render('landingPage')
-})
-
-app.get("/signup", (req, res) => {
-  res.render('signup', {message: ""})
-});
-
-app.get("/signin", (req, res) => {
-  res.render("signin", {message: ""})
-})
 
 app.get("/dashboard", (req, res) => {
   schoolPortalModel.find()
