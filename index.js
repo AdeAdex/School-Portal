@@ -17,28 +17,16 @@ mongoose
     console.log(err);
   });
 
-  let schoolPortalSchema = {
-    firstName: {type: String, required: true},
-    lastName: {type: String, required: true},
-    identity: {type: String, required: true},
-    email: {type: String, required: true, unique: true},
-    phoneNumber: {type: Number, required: true},
-    city: {type: String, required: true},
-    state: {type: String},
-    age: {type: Number, required: true},
-    gender: {type: String, required: true},
-    password: {type: String, required: true}
-  }
-
-  let schoolPortalModel = mongoose.model('portal_collection', schoolPortalSchema)
+  
+  app.use(bodyParser.urlencoded({ extended: true }));
 
   const accountRouter = require('./routes/account.route')
   const dashboardRouter = require('./routes/dashboard.route')
+  const schoolPortalModel = require('./models/account.model')
   app.use('/account', accountRouter)
   app.use('/dashboard', dashboardRouter)
 
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use('/pic', express.static('pic'));
 
@@ -48,49 +36,7 @@ app.get("/", (req, res) => {
 })
 
 
-app.get("/dashboard", (req, res) => {
-  schoolPortalModel.find()
-  .then((response) => {
-    res.render('dashboard', {response})
-  })
-  .catch((err) => {
-    res.render('dashboard')
-  });
-})
 
-app.post("/signup", (req, res) => {
-  let form = schoolPortalModel(req.body)
-  form.save()
-  .then(()=> {
-    console.log('Information saved to the database')
-    res.redirect('signin')
-  })
-  .catch((err) => {
-    console.log(err)
-    if (err.code === 11000) {
-      console.log('Email already exist')
-      res.render('signup', {message: 'Email already exist'})
-    } else {
-      console.log ('All field are required')
-      res.render('signup', {message: 'All field are required'})
-    }
-  })
-})
-
-app.post("/signin", (req, res) => {
-  schoolPortalModel.find({email:req.body.em, password:req.body.pass})
-  .then((response) => {
-    if (response.length > 0) {
-      console.log(response)
-      res.redirect("dashboard")
-    } else {
-      res.render("signin", {message: "Incorrect"})
-    }
-  })
-  .catch((err) => {
-    console.log(err)
-  })
-})
 
 
 app.listen(PORT, () => {
