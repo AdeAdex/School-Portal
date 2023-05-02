@@ -20,11 +20,11 @@ mongoose
   
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  const accountRouter = require('./routes/account.route')
-  const dashboardRouter = require('./routes/dashboard.route')
-  const schoolPortalModel = require('./models/account.model')
-  app.use('/account', accountRouter)
-  app.use('/dashboard', dashboardRouter)
+  const accountRouter = require('./routes/studentaccount.route')
+  const staffAccountRouter = require('./routes/staffaccount.route')
+
+  app.use('/studentaccount', accountRouter)
+  app.use('/staffaccount', staffAccountRouter)
 
 app.set("view engine", "ejs");
 app.use(express.static('public'));

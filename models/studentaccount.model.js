@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-let schoolPortalSchema = {
+let studentSchoolPortalSchema = {
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   identity: { type: String, required: true },
@@ -13,7 +13,7 @@ let schoolPortalSchema = {
   password: { type: String, required: true },
 };
 
-let schoolPortalModel = mongoose.model("portal_collection", schoolPortalSchema);
+let studentSchoolPortalModel = mongoose.model("studentPortal_collection", studentSchoolPortalSchema);
 
 
-module.exports = schoolPortalModel
+module.exports = studentSchoolPortalModel

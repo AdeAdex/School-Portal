@@ -74,11 +74,11 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                pages
+                sign up
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="/studentaccount/studentsignup">Student</a></li>
+                <li><a class="dropdown-item" href="/staffaccount/staffsignup">Staff</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <a class="dropdown-item" href="#">Something else here</a>
@@ -91,11 +91,24 @@
             <li class="nav-item">
               <a class="nav-link">Contact US</a>
             </li>
-            <li class="nav-item">
-              <a href="/account/signin" class="nav-link">Login</a>
-            </li>
-            <li class="nav-item">
-              <a href="/account/signup" class="nav-link">Sign Up</a>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                sign in
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/studentaccount/studentsignin">Student</a></li>
+                <li><a class="dropdown-item" href="/staffaccount/staffsignin">Staff</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -114,7 +127,7 @@
     </nav>
     </section>
 
-    <div
+    <!-- <div
       id="carouselExampleDark"
       class="carousel carousel-dark slide"
       data-bs-ride="carousel"
@@ -185,7 +198,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>
+    </div> -->
 
     <div class="mx-auto" style="width: 75%">
       <section class="d-flex flex-column flex-lg-row justify-content-center">

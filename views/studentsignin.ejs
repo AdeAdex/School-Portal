@@ -323,7 +323,7 @@
           <% if (message != "") { %>
             <div class="alert alert-danger text-center"><%= message %></div>
           <% } %>
-          <form action="/signin" method="post">
+          <form action="/studentaccount/studentsignin" method="post">
             <div class="inputbox">
               <input required="required" type="text" name="em" />
               <span>Email</span>
@@ -355,13 +355,14 @@
               ></a>
             </div>
             <div class="sign-up-container">
-              <span>Not on Adex yet?</span> <a href="/account/signup">Sign Up</a>
+              <span>Not on Adex yet?</span> <a href="/studentaccount/studentsignup">Sign Up</a>
             </div>
           </form>
         </div>
       </div>
       <div class="d-none second-container" style="width: 70%; height: 100%">
         <div class="w-75 h-75 m-auto text-white p-5" style="background-color: #302bc8;">
+          Student
           digital platform for distance learning
         </div>
       </div>
